@@ -1,95 +1,116 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client"
+
+import Image from "next/image";
+import styles from "./page.module.css";
+import {
+  Box,
+  Heading,
+  Text,
+  Button,
+  Container,
+  VStack,
+  Divider,
+} from "@chakra-ui/react";
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      <Container centerContent p={10}>
+        <VStack spacing={8} align="center">
+          <Heading as="h1" size="2xl" mb={6}>
+            Decentralized Federated Learning
+          </Heading>
+
+          {/* Step-by-Step Overview Section */}
+          <Box
+            maxW="xl"
+            textAlign="center"
+            borderWidth="1px"
+            borderRadius="lg"
+            p={6}
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+            <Heading as="h2" size="lg" mb={4}>
+              Step-by-Step Overview
+            </Heading>
+            <Text>
+              Collaboratively train machine learning models with decentralized
+              federated learning. Encrypt and store data securely on Arweave.
+              Utilize MPC and ZKPs for privacy-preserving computations.
+            </Text>
+          </Box>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+          {/* Features Section */}
+          <Box
+            maxW="xl"
+            textAlign="center"
+            borderWidth="1px"
+            borderRadius="lg"
+            p={6}
+          >
+            <Heading as="h2" size="lg" mb={4}>
+              Key Features
+            </Heading>
+            <Text>
+              - Smart contracts on Arweave for transparency <br />
+              - Encrypted data storage on Arweave for privacy <br />
+              - Multi-Party Computation (MPC) for secure collaboration <br />
+              - Zero-Knowledge Proofs (ZKPs) for privacy-preserving computations{" "}
+              <br />- Federated learning models for collective intelligence
+            </Text>
+          </Box>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+          {/* About Section */}
+          <Box
+            maxW="xl"
+            textAlign="center"
+            borderWidth="1px"
+            borderRadius="lg"
+            p={6}
+          >
+            <Heading as="h2" size="lg" mb={4}>
+              About the Project
+            </Heading>
+            <Text>
+              This project leverages decentralized technologies like Arweave and
+              blockchain smart contracts to enable collaborative and
+              privacy-preserving federated learning. Participants contribute
+              encrypted data, and through the use of MPC and ZKPs, the model is
+              collectively trained without revealing sensitive information.
+            </Text>
+          </Box>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+          {/* Divider */}
+          <Divider maxW="xl" />
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
+          {/* Flowchart Diagram Section */}
+          <Box
+            maxW="xl"
+            textAlign="center"
+            borderWidth="1px"
+            borderRadius="lg"
+            p={6}
+          >
+            <Heading as="h2" size="lg" mb={4}>
+              System Flowchart
+            </Heading>
+            {/* Include your flowchart diagram here */}
+            <Box borderWidth="1px" borderRadius="lg" overflow="hidden">
+              {/* Insert your flowchart diagram here */}
+            </Box>
+          </Box>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+          {/* Call to Action Section */}
+          <Box>
+            <Button
+              colorScheme="teal"
+              size="lg"
+              onClick={() => alert("Get Started!")}
+            >
+              Get Started
+            </Button>
+          </Box>
+        </VStack>
+      </Container>
     </main>
-  )
+  );
 }
