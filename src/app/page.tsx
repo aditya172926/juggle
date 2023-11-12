@@ -14,15 +14,19 @@ import {
   IconButton,
   SimpleGrid,
   Flex,
+  Center,
 } from "@chakra-ui/react";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
+import { motion } from 'framer-motion';
+
+const MotionBox = motion(Box);
 
 export default function Home() {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <main className={styles.main}>
-      {/* <Container> */}
+      {/* Navbar */}
       <Box w="100%" mb={4} textAlign="left">
         <Flex>
           <Box w="100%">
@@ -31,7 +35,7 @@ export default function Home() {
             </Heading>
           </Box>
           <IconButton
-          flex={1}
+            flex={1}
             aria-label="Toggle color mode"
             icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
             onClick={toggleColorMode}
@@ -39,10 +43,34 @@ export default function Home() {
           />
         </Flex>
       </Box>
+
+      {/* <Container> */}
       <VStack spacing={8} align="center">
-        <Heading as="h1" size="2xl" mb={6}>
-          Decentralized Federated Learning
-        </Heading>
+
+      <Center>
+          <MotionBox
+            w="100%"
+            p={4}
+            textAlign="center"
+            mt="10%"
+            minHeight="100vh"
+            borderRadius="lg"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <VStack spacing={2}>
+              <Heading as="h2" size="2xl" mb={2}>
+                Decentralized Federated Learning Models
+              </Heading>
+              <Text fontSize="xl" noOfLines={2}>
+                Collaborate on machine learning without compromising privacy. Juggle empowers you to contribute encrypted
+                data securely, leveraging Multi-Party Computation (MPC) and Zero-Knowledge Proofs (ZKPs) for confidential
+                model updates. Explore the future of collective intelligence with decentralized federated learning.
+              </Text>
+            </VStack>
+          </MotionBox>
+        </Center>
 
         {/* Step-by-Step Overview Section */}
         <Box
