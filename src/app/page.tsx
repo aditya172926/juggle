@@ -12,6 +12,8 @@ import {
   Divider,
   useColorMode,
   IconButton,
+  SimpleGrid,
+  Flex,
 } from "@chakra-ui/react";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 
@@ -21,16 +23,21 @@ export default function Home() {
   return (
     <main className={styles.main}>
       {/* <Container> */}
-      <Box w="100%" p={4} textAlign="right">
-        <Heading as="h1" size="lg" fontWeight="bold" color="teal.500">
-          Juggle
-        </Heading>
-        <IconButton
-          aria-label="Toggle color mode"
-          icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-          onClick={toggleColorMode}
-          ml={4}
-        />
+      <Box w="100%" mb={4} textAlign="left">
+        <Flex>
+          <Box w="100%">
+            <Heading as="h1" size="lg" fontWeight="bold" color="teal.500">
+              Juggle
+            </Heading>
+          </Box>
+          <IconButton
+          flex={1}
+            aria-label="Toggle color mode"
+            icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+            onClick={toggleColorMode}
+            ml={4}
+          />
+        </Flex>
       </Box>
       <VStack spacing={8} align="center">
         <Heading as="h1" size="2xl" mb={6}>
