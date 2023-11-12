@@ -169,17 +169,6 @@ export default function Home() {
             {/* Insert your flowchart diagram here */}
           </Box>
         </Box>
-
-        {/* Call to Action Section */}
-        <Box>
-          <Button
-            colorScheme="teal"
-            size="lg"
-            onClick={() => alert("Get Started!")}
-          >
-            Get Started
-          </Button>
-        </Box>
       </VStack>
       {/* </Container> */}
     </main>
