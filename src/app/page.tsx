@@ -15,9 +15,11 @@ import {
   SimpleGrid,
   Flex,
   Center,
+  UnorderedList,
+  ListItem,
 } from "@chakra-ui/react";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const MotionBox = motion(Box);
 
@@ -46,14 +48,13 @@ export default function Home() {
 
       {/* <Container> */}
       <VStack spacing={8} align="center">
-
-      <Center>
+        <Center>
           <MotionBox
             w="100%"
-            p={4}
+            px={4}
             textAlign="center"
             mt="10%"
-            minHeight="100vh"
+            mb="15%"
             borderRadius="lg"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -64,52 +65,64 @@ export default function Home() {
                 Decentralized Federated Learning Models
               </Heading>
               <Text fontSize="xl" noOfLines={2}>
-                Collaborate on machine learning without compromising privacy. Juggle empowers you to contribute encrypted
-                data securely, leveraging Multi-Party Computation (MPC) and Zero-Knowledge Proofs (ZKPs) for confidential
-                model updates. Explore the future of collective intelligence with decentralized federated learning.
+                Collaborate on machine learning without compromising privacy.
+                Juggle empowers you to contribute encrypted data securely,
+                leveraging Arweave, MPC and ZKPs for confidential model updates
+                and evaluations
               </Text>
             </VStack>
           </MotionBox>
         </Center>
 
         {/* Step-by-Step Overview Section */}
-        <Box
-          maxW="xl"
-          textAlign="center"
-          borderWidth="1px"
-          borderRadius="lg"
-          p={6}
-        >
-          <Heading as="h2" size="lg" mb={4}>
+        <Box textAlign="left" px={6} w="100%">
+          <Heading as="h1" mb={4}>
             Step-by-Step Overview
           </Heading>
-          <Text>
-            Collaboratively train machine learning models with decentralized
-            federated learning. Encrypt and store data securely on Arweave.
-            Utilize MPC and ZKPs for privacy-preserving computations.
-          </Text>
+          <UnorderedList fontSize="xl">
+            <ListItem>
+              Collaborate with a decentralized network of participants.
+            </ListItem>
+            <ListItem>Encrypt and securely store data on Arweave.</ListItem>
+            <ListItem>
+              Leverage Multi-Party Computation (MPC) for secure collaboration.
+            </ListItem>
+            <ListItem>
+              Utilize Zero-Knowledge Proofs (ZKPs) for privacy-preserving
+              computations.
+            </ListItem>
+          </UnorderedList>
         </Box>
 
         {/* Features Section */}
-        <Box
-          maxW="xl"
-          textAlign="center"
-          borderWidth="1px"
-          borderRadius="lg"
-          p={6}
-        >
-          <Heading as="h2" size="lg" mb={4}>
+
+        <Box textAlign="left" pl={6} pt={6} w="100%">
+          {" "}
+          <Heading as="h1" mb={4}>
             Key Features
           </Heading>
-          <Text>
-            - Smart contracts on Arweave for transparency <br />
-            - Encrypted data storage on Arweave for privacy <br />
-            - Multi-Party Computation (MPC) for secure collaboration <br />-
-            Zero-Knowledge Proofs (ZKPs) for privacy-preserving computations{" "}
-            <br />- Federated learning models for collective intelligence
-          </Text>
         </Box>
 
+        <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={8} w="100%">
+          <FeatureCard
+            title="Secure Collaboration"
+            description="Collaborate with a decentralized network of participants securely."
+          />
+          <FeatureCard
+            title="Data Encryption"
+            description="Encrypt and securely store data on Arweave for privacy."
+          />
+          <FeatureCard
+            title="MPC Integration"
+            description="Leverage Multi-Party Computation (MPC) for secure collaboration."
+          />
+          <FeatureCard
+            title="Privacy with ZKPs"
+            description="Utilize Zero-Knowledge Proofs (ZKPs) for privacy-preserving computations."
+          />
+        </SimpleGrid>
+
+      
         {/* About Section */}
         <Box
           maxW="xl"
@@ -165,3 +178,27 @@ export default function Home() {
     </main>
   );
 }
+
+// FeatureCard Component
+interface FeatureCardProps {
+  title: string;
+  description: string;
+}
+
+const FeatureCard: React.FC<FeatureCardProps> = ({ title, description }) => {
+  return (
+    <Flex
+      p={6}
+      direction="column"
+      align="center"
+      justify="center"
+      borderWidth="1px"
+      borderRadius="lg"
+    >
+      <Heading as="h3" size="lg" mb={4}>
+        {title}
+      </Heading>
+      <Text textAlign="center">{description}</Text>
+    </Flex>
+  );
+};
