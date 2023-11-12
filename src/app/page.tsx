@@ -2,6 +2,9 @@
 
 import Image from "next/image";
 import styles from "./page.module.css";
+import dark_flowchart from "./assets/dark_mpclearn_flowchart.png";
+import light_flowchart from "./assets/light_mpclearn_flowchart.png";
+
 import {
   Box,
   Heading,
@@ -74,11 +77,11 @@ export default function Home() {
         </Center>
 
         {/* Step-by-Step Overview Section */}
-        <Box textAlign="left" px={6} w="100%">
+        <Box textAlign="center" px={6} mb={20} w="100%">
           <Heading as="h1" mb={4}>
             Step-by-Step Overview
           </Heading>
-          <UnorderedList fontSize="xl">
+          <UnorderedList fontSize="xl" listStyleType="none">
             <ListItem>
               Collaborate with a decentralized network of participants.
             </ListItem>
@@ -95,14 +98,13 @@ export default function Home() {
 
         {/* Features Section */}
 
-        <Box textAlign="left" pl={6} pt={6} w="100%">
-          {" "}
+        <Box textAlign="center" p={6} w="100%">
           <Heading as="h1" mb={4}>
             Key Features
           </Heading>
         </Box>
 
-        <SimpleGrid columns={{ base: 1, md: 2, lg: 2 }} spacing={8} w="100%">
+        <SimpleGrid columns={{ base: 1, md: 2, lg: 2 }} spacing={8} w="100%" mb={20}>
           <FeatureCard
             title="Secure Collaboration"
             description="Enrich a publicly trained ML model with your own data privately"
@@ -129,44 +131,13 @@ export default function Home() {
           />
         </SimpleGrid>
 
-      
-        {/* About Section */}
-        {/* <Box
-          maxW="xl"
-          textAlign="center"
-          borderWidth="1px"
-          borderRadius="lg"
-          p={6}
-        >
-          <Heading as="h2" size="lg" mb={4}>
-            About the Project
-          </Heading>
-          <Text>
-            This project leverages decentralized technologies like Arweave and
-            blockchain smart contracts to enable collaborative and
-            privacy-preserving federated learning. Participants contribute
-            encrypted data, and through the use of MPC and ZKPs, the model is
-            collectively trained without revealing sensitive information.
-          </Text>
-        </Box> */}
-
-        {/* Divider */}
-        <Divider maxW="xl" />
-
         {/* Flowchart Diagram Section */}
-        <Box
-          maxW="xl"
-          textAlign="center"
-          borderWidth="1px"
-          borderRadius="lg"
-          p={6}
-        >
-          <Heading as="h2" size="lg" mb={4}>
+        <Box textAlign="center" p={6}>
+          <Heading as="h1" mb={4}>
             System Flowchart
           </Heading>
-          {/* Include your flowchart diagram here */}
-          <Box borderWidth="1px" borderRadius="lg" overflow="hidden">
-            {/* Insert your flowchart diagram here */}
+          <Box overflow="hidden">
+            <Image src={light_flowchart} alt="dark flowdiagram" />
           </Box>
         </Box>
       </VStack>
