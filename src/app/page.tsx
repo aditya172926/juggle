@@ -1,27 +1,24 @@
 "use client";
 
 import Image from "next/image";
-import styles from "./page.module.css";
 import dark_flowchart from "./assets/dark_mpclearn_flowchart.png";
 import light_flowchart from "./assets/light_mpclearn_flowchart.png";
+import styles from "./page.module.css";
 
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import {
   Box,
-  Heading,
-  Text,
-  Button,
-  Container,
-  VStack,
-  Divider,
-  useColorMode,
-  IconButton,
-  SimpleGrid,
-  Flex,
   Center,
-  UnorderedList,
+  Flex,
+  Heading,
+  IconButton,
   ListItem,
+  SimpleGrid,
+  Text,
+  UnorderedList,
+  VStack,
+  useColorMode
 } from "@chakra-ui/react";
-import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
 
 const MotionBox = motion(Box);
@@ -43,7 +40,10 @@ export default function Home() {
             flex={1}
             aria-label="Toggle color mode"
             icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-            onClick={toggleColorMode}
+            onClick={() => {
+              toggleColorMode();
+              console.log(colorMode);
+            }}
             ml={4}
           />
         </Flex>
@@ -137,7 +137,7 @@ export default function Home() {
             System Flowchart
           </Heading>
           <Box overflow="hidden">
-            <Image src={light_flowchart} alt="dark flowdiagram" />
+            <Image src={colorMode == "light" ? light_flowchart : dark_flowchart} alt="dark flowdiagram" />
           </Box>
         </Box>
       </VStack>
