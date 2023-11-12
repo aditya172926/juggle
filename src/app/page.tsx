@@ -68,7 +68,6 @@ export default function Home() {
                 Collaborate on machine learning without compromising privacy.
                 Juggle empowers you to contribute encrypted data securely,
                 leveraging Arweave, MPC and ZKPs for confidential model updates
-                and evaluations
               </Text>
             </VStack>
           </MotionBox>
