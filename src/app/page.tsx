@@ -102,28 +102,36 @@ export default function Home() {
           </Heading>
         </Box>
 
-        <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={8} w="100%">
+        <SimpleGrid columns={{ base: 1, md: 2, lg: 2 }} spacing={8} w="100%">
           <FeatureCard
             title="Secure Collaboration"
-            description="Collaborate with a decentralized network of participants securely."
+            description="Enrich a publicly trained ML model with your own data privately"
           />
           <FeatureCard
             title="Data Encryption"
-            description="Encrypt and securely store data on Arweave for privacy."
+            description="Computation on Encrypted data protects your dataset from spying"
           />
           <FeatureCard
             title="MPC Integration"
-            description="Leverage Multi-Party Computation (MPC) for secure collaboration."
+            description="Up the speed and key security of data pre-processing, validation, encryption and trainging by MPC nodes"
           />
           <FeatureCard
             title="Privacy with ZKPs"
-            description="Utilize Zero-Knowledge Proofs (ZKPs) for privacy-preserving computations."
+            description="Model evaluations, Dataset integrity and privacy is maintained and validated by ZKPs"
+          />
+          <FeatureCard
+            title="Governance and Voting"
+            description="Protect the Models via consensus mechanisms and voting on which data to train, evaluate, and release with ZKPs provided"
+          />
+          <FeatureCard
+            title="Version Keeping"
+            description="Can rollback to previous version of trained model reference provided via Smart Contracts on Arweave"
           />
         </SimpleGrid>
 
       
         {/* About Section */}
-        <Box
+        {/* <Box
           maxW="xl"
           textAlign="center"
           borderWidth="1px"
@@ -140,7 +148,7 @@ export default function Home() {
             encrypted data, and through the use of MPC and ZKPs, the model is
             collectively trained without revealing sensitive information.
           </Text>
-        </Box>
+        </Box> */}
 
         {/* Divider */}
         <Divider maxW="xl" />
