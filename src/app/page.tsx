@@ -6,11 +6,14 @@ import light_flowchart from "./assets/light_mpclearn_flowchart.png";
 import styles from "./page.module.css";
 
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+import {FaGithub, FaLinkedin, FaTwitter} from "react-icons/fa";
 import {
   Box,
   Center,
   Flex,
+  HStack,
   Heading,
+  Icon,
   IconButton,
   ListItem,
   SimpleGrid,
@@ -20,6 +23,7 @@ import {
   useColorMode
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import { Link } from "@chakra-ui/next-js";
 
 const MotionBox = motion(Box);
 
@@ -140,6 +144,35 @@ export default function Home() {
             <Image src={colorMode == "light" ? light_flowchart : dark_flowchart} alt="dark flowdiagram" />
           </Box>
         </Box>
+
+        {/* <Box as="footer" mt={8} borderTopWidth="1px" borderColor="gray.200" p={4} w="100%">
+          <HStack spacing={4} justify="center">
+            <SocialLink icon={<Icon as={FaGithub} boxSize={6} />} label="GitHub" href="https://github.com/your-github-username" />
+            <SocialLink icon={<Icon as={FaLinkedin} boxSize={6} />} label="LinkedIn" href="https://www.linkedin.com/in/your-linkedin-username/" />
+            <SocialLink icon={<Icon as={FaTwitter} boxSize={6} />} label="Twitter" href="https://twitter.com/your-twitter-handle" />
+          </HStack>
+        </Box> */}
+<Box as="footer" mt={8} borderTopWidth="1px" borderColor="gray.200" p={4} w="100%">
+          <VStack align="center">
+            {/* Footer Header */}
+            <Heading as="h3" size="lg" color="teal.500" mb={2}>
+              Juggle
+            </Heading>
+
+            {/* Copyright */}
+            <Text fontSize="sm" mb={4}>
+              &copy; 2023 Aditya Singh
+            </Text>
+
+            {/* Social Links */}
+            <HStack spacing={4}>
+              <SocialLink icon={<Icon as={FaGithub} boxSize={6} />} label="GitHub" href="https://github.com/aditya172926" />
+              <SocialLink icon={<Icon as={FaLinkedin} boxSize={6} />} label="LinkedIn" href="https://www.linkedin.com/in/aditya-26/" />
+              <SocialLink icon={<Icon as={FaTwitter} boxSize={6} />} label="Twitter" href="https://twitter.com/aditya26sg" />
+            </HStack>
+          </VStack>
+        </Box>
+        
       </VStack>
       {/* </Container> */}
     </main>
@@ -150,6 +183,12 @@ export default function Home() {
 interface FeatureCardProps {
   title: string;
   description: string;
+}
+
+interface SocialLinkProps {
+  icon: React.ReactElement;
+  label: string;
+  href: string;
 }
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ title, description }) => {
@@ -167,5 +206,19 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description }) => {
       </Heading>
       <Text textAlign="center">{description}</Text>
     </Flex>
+  );
+};
+
+const SocialLink: React.FC<SocialLinkProps> = ({ icon, label, href }) => {
+  return (
+    <Link href={href} isExternal>
+      <IconButton
+        aria-label={label}
+        icon={icon}
+        size="lg"
+        colorScheme="teal"
+        variant="ghost"
+      />
+    </Link>
   );
 };
