@@ -161,7 +161,7 @@ export default function Home() {
 
             {/* Copyright */}
             <Text fontSize="sm" mb={4}>
-              &copy; 2023 Aditya Singh
+              &copy; 2024 Aditya Singh
             </Text>
 
             {/* Social Links */}
